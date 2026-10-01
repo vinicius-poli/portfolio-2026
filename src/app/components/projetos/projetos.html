@@ -32,7 +32,10 @@
               <div class="d-flex flex-wrap gap-2 ms-auto">
                 @if (projeto.urlImagem) {
                   <button
+                    (click)="projetoSelecionado.set(projeto)"
                     type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projetosModal"
                     class="btn btn-outline-dark rounded-pill d-inline-flex align-items-center gap-2"
                   >
                     <i class="bi bi-image"></i>
@@ -57,3 +60,34 @@
     </ol>
   </article>
 </section>
+
+<!-- Modal -->
+<div
+  class="modal modal-xl fade"
+  id="projetosModal"
+  tabindex="-1"
+  aria-labelledby="projetosModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="projetosModalLabel">{{ projetoSelecionado()?.titulo }}</h1>
+        <button
+          (click)="projetoSelecionado.set(undefined)"
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <img
+          class="img-fluid"
+          [src]="projetoSelecionado()?.urlImagem"
+          [alt]="projetoSelecionado()?.titulo"
+        />
+      </div>
+    </div>
+  </div>
+</div>

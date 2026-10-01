@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 interface Projeto {
   titulo: string;
@@ -14,6 +14,8 @@ interface Projeto {
   templateUrl: './projetos.html',
 })
 export class Projetos {
+  public readonly projetoSelecionado = signal<Projeto | undefined>(undefined);
+
   public readonly projetos: Projeto[] = [
     {
       titulo: 'Gerador de Certificados Online',
@@ -34,7 +36,7 @@ export class Projetos {
     },
     {
       titulo: 'DeliveryApp',
-      urlImagem: '',
+      urlImagem: '/img/gestao-de-equipamentos.png',
       urlRepositorio: 'https://github.com/academiadoprogramador-fullstack/delivery-app-2026',
       tecnologias: [
         'C#',
@@ -50,7 +52,7 @@ export class Projetos {
     },
     {
       titulo: 'Gerador de Provas',
-      urlImagem: '?',
+      urlImagem: '/img/controle-de-medicamentos.png',
       urlRepositorio: 'https://github.com/academiadoprogramador-fullstack/gerador-de-provas-2026',
       tecnologias: ['HTML', 'CSS', 'C#', '.NET 10', 'Entity Framework'],
       descricao: `A aplicação organiza disciplinas, matérias e questões para permitir a criação de testes personalizados. Os testes podem ser gerados com questões selecionadas aleatoriamente, duplicados e exportados em PDF junto com seus respectivos gabaritos.`,
