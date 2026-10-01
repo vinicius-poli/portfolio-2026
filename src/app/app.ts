@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
 import { Sobre } from './components/sobre/sobre';
+import { Habilidades } from './components/habilidades/habilidades';
 
 // Define um modelo de objeto dentro do componente
 interface ItemNavbar {
@@ -11,7 +12,7 @@ interface ItemNavbar {
 
 // Componente raiz (root) da aplicação, tudo carrega através dele
 @Component({
-  imports: [Navbar, Sobre],
+  imports: [Navbar, Sobre, Habilidades], 
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
