@@ -52,7 +52,7 @@ export class Projetos {
     },
     {
       titulo: 'Gerador de Provas',
-      urlImagem: '/img/controle-de-medicamentos.png',
+      urlImagem: 'img/controle-de-medicamentos.png',
       urlRepositorio: 'https://github.com/academiadoprogramador-fullstack/gerador-de-provas-2026',
       tecnologias: ['HTML', 'CSS', 'C#', '.NET 10', 'Entity Framework'],
       descricao: `A aplicação organiza disciplinas, matérias e questões para permitir a criação de testes personalizados. Os testes podem ser gerados com questões selecionadas aleatoriamente, duplicados e exportados em PDF junto com seus respectivos gabaritos.`,
